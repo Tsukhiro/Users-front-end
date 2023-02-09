@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import axios from "axios"
-import People from "./assets/people.png"
-import Arrow from "./assets/arrow.png"
-import Trash from "./assets/trash.png"
+import People from "../../assets/people.png"
+import Arrow from "../../assets/arrow.png"
+import Trash from "../../assets/trash.png"
 
 import {
   Container,
@@ -29,12 +29,23 @@ function App() {
 
     setUsers([...users, newUser ])
 
-  const { data: newUsers } = await axios.get("http://localhost:3001/users")
-
-    setUsers(newUsers)
   }
 
-  function deleteUser(userId){
+
+  useEffect(() => {
+    async function fetchUsers(){
+      const { data: newUsers } = await axios.get("http://localhost:3001/users")
+
+      setUsers(newUsers);
+    }
+
+    fetchUsers()
+
+  }, [])
+
+
+  async function deleteUser(userId){
+    await axios.delete(`http://localhost:3001/users/${userId}`)
     const newUsers = users.filter(user => user.id !== userId)
     
     setUsers(newUsers)
