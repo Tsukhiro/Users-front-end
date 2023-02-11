@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios"
-import People from "../../assets/people.png"
+import Avatar from "../../assets/avatar.png"
 import Arrow from "../../assets/arrow.png"
 import Trash from "../../assets/trash.png"
 
@@ -10,27 +10,13 @@ import {
   Image,
   ContainerItens,
   H1,
-  InputLabel,
-  Input,
   Button,
   User
 } from "./styles";
 
-function App() {
+function Users() {
 
   const [users, setUsers] = useState([]);
-  const inputName = useRef()
-  const inputAge = useRef()
-
-
-  async function addNewUser(){
-
-  const { data: newUser } = await axios.post("http://localhost:3001/users", { name:inputName.current.value, age:inputAge.current.value })
-
-    setUsers([...users, newUser ])
-
-  }
-
 
   useEffect(() => {
     async function fetchUsers(){
@@ -54,18 +40,9 @@ function App() {
 
   return (
     <Container>
-      <Image alt="logo" src={People} />
+      <Image alt="logo" src={Avatar} />
       <ContainerItens>
-        <H1>Hello!</H1>
-        <InputLabel>Name</InputLabel>
-        <Input ref={inputName} placeholder="Name" />
-
-        <InputLabel>Age</InputLabel>
-        <Input ref={inputAge} placeholder="Age" />
-
-        <Button onClick={addNewUser}>
-          Register <img alt="arrow" src={Arrow} />
-        </Button>
+        <H1>Users</H1>
 
         <ul>
           {
@@ -77,9 +54,14 @@ function App() {
             ))
           }
         </ul>
+
+        <Button to="/">
+        <img alt="arrow" src={Arrow}/> Back
+        </Button>
+
       </ContainerItens>
     </Container>
   );
 };
 
-export default App;
+export default Users;

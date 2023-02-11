@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 
+
 import axios from "axios"
 import People from "../../assets/people.png"
 import Arrow from "../../assets/arrow.png"
@@ -40,7 +41,7 @@ function App() {
         <InputLabel>Age</InputLabel>
         <Input ref={inputAge} placeholder="Age" />
 
-        <Button onClick={addNewUser}>
+        <Button to="/users" onClick={addNewUser}>
           Register <img alt="arrow" src={Arrow} />
         </Button>
 
