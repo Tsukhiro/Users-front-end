@@ -8,13 +8,13 @@ import Arrow from "../../assets/arrow.png"
 
 import H1 from "../../components/Tittle"
 import ContainerItens from "../../components/ContainerItens"
+import Button from "../../components/Button"
 
 import {
   Container,
   Image,
   InputLabel,
   Input,
-  Button,
 } from "./styles";
 
 function App() {

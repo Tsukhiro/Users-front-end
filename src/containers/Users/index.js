@@ -8,11 +8,11 @@ import Trash from "../../assets/trash.png"
 
 import H1 from "../../components/Tittle"
 import ContainerItens from "../../components/ContainerItens"
+import Button from "../../components/Button"
 
 import {
   Container,
   Image,
-  Button,
   User
 } from "./styles";
 
@@ -63,7 +63,7 @@ function Users() {
           }
         </ul>
 
-        <Button onClick={goBackPage}>
+        <Button isBack={true} onClick={goBackPage}>
         <img alt="arrow" src={Arrow}/> Back
         </Button>
 
