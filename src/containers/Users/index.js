@@ -6,11 +6,12 @@ import Avatar from "../../assets/avatar.png"
 import Arrow from "../../assets/arrow.png"
 import Trash from "../../assets/trash.png"
 
+import H1 from "../../components/Tittle"
+
 import {
   Container,
   Image,
   ContainerItens,
-  H1,
   Button,
   User
 } from "./styles";

@@ -6,11 +6,11 @@ import axios from "axios"
 import People from "../../assets/people.png"
 import Arrow from "../../assets/arrow.png"
 
+import H1 from "../../components/Tittle"
 import {
   Container,
   Image,
   ContainerItens,
-  H1,
   InputLabel,
   Input,
   Button,
