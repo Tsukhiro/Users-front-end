@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom"
 import Background from "../../assets/bgimage.png"
 
 export const Container = styled.div`
@@ -66,7 +65,7 @@ export const Input = styled.input`
     color: #FFFFFF;
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
 
     display: flex;
     align-items: center;

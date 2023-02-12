@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 
 
 import axios from "axios"
@@ -20,6 +21,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const inputName = useRef()
   const inputAge = useRef()
+  const history = useHistory()
 
 
   async function addNewUser(){
@@ -28,6 +30,7 @@ function App() {
 
     setUsers([...users, newUser ])
 
+    history.push('/users')
   }
 
   return (
@@ -41,7 +44,7 @@ function App() {
         <InputLabel>Age</InputLabel>
         <Input ref={inputAge} placeholder="Age" />
 
-        <Button to="/users" onClick={addNewUser}>
+        <Button onClick={addNewUser}>
           Register <img alt="arrow" src={Arrow} />
         </Button>
 
