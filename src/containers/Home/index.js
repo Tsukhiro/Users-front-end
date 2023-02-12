@@ -7,10 +7,11 @@ import People from "../../assets/people.png"
 import Arrow from "../../assets/arrow.png"
 
 import H1 from "../../components/Tittle"
+import ContainerItens from "../../components/ContainerItens"
+
 import {
   Container,
   Image,
-  ContainerItens,
   InputLabel,
   Input,
   Button,
